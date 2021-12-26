@@ -1,0 +1,17 @@
+body {
+    background-color: #404452;
+}
+#closeInfoWindow {
+    border-radius: 20%;
+    color: #61afef;
+    background-color: #333743;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+    outline: none;
+}
+#hello {
+    position: relative;
+    margin-top: 100px;
+    font-family: "Apple Chancery";/*"Apple Chancery"*/
+}

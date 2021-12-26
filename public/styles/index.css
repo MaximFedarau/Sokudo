@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css?family=Dosis');
+
+:root {
+    /* generic */
+    --gutterSm: 0.4rem;
+    --gutterMd: 0.8rem;
+    --gutterLg: 1.6rem;
+    --gutterXl: 2.4rem;
+    --gutterXx: 7.2rem;
+    --colorPrimary400: #7e57c2;
+    --colorPrimary600: #5e35b1;
+    --colorPrimary800: #4527a0;
+    --fontFamily: "Dosis", sans-serif;
+    --fontSizeSm: 1.2rem;
+    --fontSizeMd: 1.6rem;
+    --fontSizeLg: 2.1rem;
+    --fontSizeXl: 2.8rem;
+    --fontSizeXx: 3.6rem;
+    --lineHeightSm: 1.1;
+    --lineHeightMd: 1.8;
+    --transitionDuration: 300ms;
+    --transitionTF: cubic-bezier(0.645, 0.045, 0.355, 1);
+
+    /* floated labels */
+    --inputPaddingV: var(--gutterMd);
+    --inputPaddingH: var(--gutterLg);
+    --inputFontSize: var(--fontSizeLg);
+    --inputLineHeight: var(--lineHeightMd);
+    --labelScaleFactor: 0.8;
+    --labelDefaultPosY: 50%;
+    --labelTransformedPosY: calc(
+            (var(--labelDefaultPosY)) -
+            (var(--inputPaddingV) * var(--labelScaleFactor)) -
+            (var(--inputFontSize) * var(--inputLineHeight))
+    );
+    --inputTransitionDuration: var(--transitionDuration);
+    --inputTransitionTF: var(--transitionTF);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 20px;
+}
+
+
+body{
+    /*background: -webkit-linear-gradient(90deg, #9f2ef4,#f97d64,#ffcd42);*/
+    background: linear-gradient(90deg,#9f2ef4,#f97d64,#ffcd42);/*#ff512f, #dd2476*/
+}
+
+.Input {
+    position: relative;
+    width: 500px;
+    display: inline-block;
+    margin-top: 250px;
+
+
+}
+
+.Input-text {
+    display: block;
+    margin: 0;
+    margin-left: 375px;
+    padding: 5px;
+    color: inherit;
+    width: 100%;
+    font-family: inherit;
+    font-size: 20px;
+    font-weight: inherit;
+    line-height: var(--inputLineHeight);
+    border: none;
+    border-radius: 0.4rem;
+    transition: box-shadow var(--transitionDuration);
+}
+
+.Input-text::placeholder {
+    color: #B0BEC5;
+}
+
+.Input-text:focus {
+    outline: none;
+    box-shadow:0.1rem 0.3rem 0.6rem var(--colorPrimary600);
+}
+
+
+
+.Input-text:placeholder-shown + .Input-label {
+    visibility: hidden;
+    z-index: -1;
+}
+
+.Input-text:not(:placeholder-shown) + .Input-label,
+.Input-text:focus:not(:placeholder-shown) + .Input-label {
+    visibility: visible;
+    z-index: 1;
+    opacity: 1;
+    transform:
+            translate3d(0, var(--labelTransformedPosY), 0)
+            scale(var(--labelScaleFactor));
+    transition:
+            transform var(--inputTransitionDuration),
+            visibility 0ms,
+            z-index 0ms;
+}
+
+
+.btn {
+    background-color: DodgerBlue;
+    margin-left: 595px;
+    margin-top: 35px;
+    border: none;
+    color: white;
+    padding: 12px 30px;
+    cursor: pointer;
+    font-size: 20px;
+    border-radius: 890px;/*04rem*/
+
+}
+
+/* Более темный фон при наведении курсора мыши */
+.btn:hover {
+    background-color: RoyalBlue;
+    outline: none;
+    box-shadow: 0.1rem 0.3rem 0.6rem var(--colorPrimary600);
+}
+
+.informationButtonDiv {
+    margin-top: -375px;
+    margin-left: 1230px;/*1240px*/
+}
+
+#informationButton {
+    width: 30px;
+    height: 30px;
+}
+
+#informationButton:hover {
+    /*box-shadow: 0.1rem 0.3rem 0.6rem grey;*/
+    box-shadow: 0.1rem 0.3rem 0.6rem var(--colorPrimary600);
+}
+#chooseDirYoutube {
+    margin-left: -35px;
+}
+
+#preferencesYoutube {
+    margin-left: 130px;
+}
+#youtubeDownloadButton {
+    margin-left: 575px;
+}
+#TikTokLogo:hover {
+    -webkit-transform: scale(1.3);
+    -ms-transform: scale(1.3);
+    transform: scale(1.3);
+}
+#YouTubeLogo:hover {
+    -webkit-transform: scale(1.3);
+    -ms-transform: scale(1.3);
+    transform: scale(1.3);
+}
+

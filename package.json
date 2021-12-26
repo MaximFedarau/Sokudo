@@ -1,0 +1,37 @@
+{
+  "name": "firstelectronproject",
+  "version": "1.0.0",
+  "description": "This is my first Electron app.",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "postinstall": "install-app-deps",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
+  },
+  "author": "Maxim Fedarau <fedarau@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^15.3.0",
+    "electron-builder": "^22.14.5",
+    "electron-packager": "^15.4.0"
+  },
+  "dependencies": {
+    "electron-nightly": "^18.0.0-nightly.20211123",
+    "youtube-dl": "^3.5.0",
+    "youtube-dl-exec": "^2.0.2",
+    "yt-dlp-exec": "^1.0.2"
+  },
+  "build": {
+    "asar": false,
+    "appId": "com.electron.sokudo",
+    "productName": "Sokudo",
+    "mac": {
+      "category": "helper.app"
+    },
+    "win": {
+      "target": "portable",
+      "icon": "build/icon.png"
+    }
+  }
+}

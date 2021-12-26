@@ -1,0 +1,23 @@
+body {
+    background-color: #404452;
+
+}
+#closeYouTubePreferencesWindow {
+    border-radius: 20%;
+    color: #61afef;
+    background-color: #333743;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+    outline: none;
+}
+#acceptYouTubePreferencesButton {
+    width: 100%;
+    margin-top: 610px;
+    height: 30px;
+    border-radius: 1rem;
+    font-size: 20px;
+    color: #61afef;
+    background-color: #333743;
+    border-style: none;
+}

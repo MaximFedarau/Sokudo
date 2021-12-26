@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <title>Sokudo</title>
+    <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+<div class="Input" align="center">
+
+
+    <input type="text" id="youtubeLinkInput" class="Input-text" placeholder="Place a link">
+
+
+<button class="btn" id="youtubeDownloadButton"><i class="fa fa-download"></i></button>
+</div>
+<button id="chooseDirYoutube" class="btn"><i class="fa fa-folder"></i></button>
+<button id="preferencesYoutube" class="btn"><i class="fa fa-cog"></i></button>
+<div class="informationButtonDiv">
+    <button id="informationButton" style="border-radius: 100%; border: none; background-color: black; color: white;"><b>?</b></button></div>
+</div>
+<div style="position:relative; top:190px; width: 10%;">
+<button id="youtubePage" style="background-color: transparent; border: none"><img src="https://icons.iconarchive.com/icons/dakirby309/simply-styled/48/YouTube-icon.png" id="YouTubeLogo"></button><br><br>
+<button id="tiktokPage" style="background-color: transparent; border: none"><img src="https://cdn.icon-icons.com/icons2/2657/PNG/48/tiktok_icon_161080.png" id="TikTokLogo"></button>
+</div>
+<button id="usersPreferencesButton" style="position: relative; top: 485px; left: 1175px"><i class="fa fa-user">
+</i></button><!--Use own preferences-->
+<button id="basePreferencesButton" style="position: relative; top: 485px; left: 1185px;"><i class="fa fa-star">
+</i></button><!--Use standard preferences-->
+<script src="scripts/download.js"></script>
+<script src="scripts/info.js"></script>
+<script src="scripts/youtubePreferencesScript.js"></script>
+</body>
+</html>
+<!--
+    Есть идея добавить в приложение уведомления. То есть вы наводите курсором на виджет и вам выскакивает уведомление
+    в верхнем правом углу. Также добавить возможность отключения этих уведомлений.
+-->
