@@ -69,10 +69,24 @@ const template  = [
         label: 'File',
         submenu: [
             {
+                label: 'Tik Tok Downloader',
+                accelerator: 'Command+T',
+                click() {
+                    win.loadFile('public/tiktok.html')
+                }
+            },
+            {
+                label: "YouTube Downloader",
+                accelerator: "Command+Y",
+                click() {
+                    win.loadFile('public/index.html')
+                }
+            },
+            {
                 label: 'Quit',
                 accelerator: 'Command+Q',
                 click() { app.quit(); }
-            },
+            }
         ]
     },
     {

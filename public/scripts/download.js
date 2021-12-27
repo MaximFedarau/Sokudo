@@ -72,16 +72,6 @@ youtubeDownloadButton.onclick = function(){
 }
 
 
-let youtubePageButton = document.getElementById("youtubePage")
-youtubePageButton.onclick = function() {
-    ipcDownload.send("createYoutubeDownloadWindow")
-}
-
-let tiktokPageButton = document.getElementById("tiktokPage")
-tiktokPageButton.onclick = function() {
-    ipcDownload.send('createTikTokDownloadWindow')
-}
-
 let usersPreferencesButton = document.getElementById("usersPreferencesButton")
 let usersYouTubePreferencesList = ['best']
 usersPreferencesButton.onclick = function() {

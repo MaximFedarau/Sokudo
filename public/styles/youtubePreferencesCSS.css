@@ -13,11 +13,27 @@ body {
 }
 #acceptYouTubePreferencesButton {
     width: 100%;
-    margin-top: 610px;
+    margin-top: 600px;
     height: 30px;
     border-radius: 1rem;
     font-size: 20px;
     color: #61afef;
     background-color: #333743;
-    border-style: none;
+    border-style: solid;
+    border-width: 2px;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 ; }
+}
+
+#acceptYouTubePreferencesButton:hover
+{
+    animation: pulse 1s;
+    box-shadow: 0 0 0 2em rgba(0,0,0,0);
+
+}
+
+#acceptYouTubePreferencesButton:active {
+    transform: translateY(4px);
 }
