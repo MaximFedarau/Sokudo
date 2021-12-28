@@ -18,6 +18,8 @@
   },
   "dependencies": {
     "electron-nightly": "^18.0.0-nightly.20211123",
+    "tiktok-scraper-without-watermark": "^1.1.3",
+    "url-downloader": "^1.0.8",
     "youtube-dl-exec": "^2.0.2",
     "yt-dlp-exec": "^1.0.2"
   },
