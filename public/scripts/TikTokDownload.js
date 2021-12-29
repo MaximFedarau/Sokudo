@@ -67,7 +67,7 @@ tiktokDownloadButton.onclick = function() {
 let usersPreferencesTikTokButton = document.getElementById("preferencesTiktok")
 
 usersPreferencesTikTokButton.onclick = function() {
-    alert("IN DEVELOPMENT STAGE")
+    alert("Developing...")
 }
 /*const tiktok = require("tiktok-scraper-without-watermark")
 const url = "https://www.tiktok.com/@lilhancha/video/7042666995887738117?is_copy_url=1&is_from_webapp=v1"
