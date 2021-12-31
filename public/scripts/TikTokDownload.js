@@ -49,7 +49,7 @@ tiktokDownloadButton.onclick = function() {
                 console.log(`stderr: ${stderr}`);
                 if (error !== null) {
                     console.log(`exec error: ${error}`);//прописать через __dirname
-                    alert("Some error occurred")
+                    alert("\t Some error occurred!\n Please check your Internet connection or the availability of the video.")
                 }
                 if (error === null) {
                     alert("Finished downloading")

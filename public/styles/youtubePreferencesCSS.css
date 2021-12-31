@@ -23,17 +23,128 @@ body {
     border-width: 2px;
 }
 
+@keyframes pulse-for-accept-button {
+    0% { box-shadow: 0 0 0 0 rgb(77,181,171); }
+}
+
 @keyframes pulse {
-    0% { box-shadow: 0 0 0 0 ; }
+    0% {box-shadow: 0 0 0 0}
 }
 
 #acceptYouTubePreferencesButton:hover
 {
-    animation: pulse 1s;
+    animation: pulse-for-accept-button 1s;
     box-shadow: 0 0 0 2em rgba(0,0,0,0);
 
 }
 
 #acceptYouTubePreferencesButton:active {
     transform: translateY(4px);
+}
+
+.btn {
+    border-radius: 1rem;
+    font-size: 15px;
+    color: #61afef;
+    background-color: #333743;
+    border-style: solid;
+    border-width: 2px;
+    width: 150px;
+    height: 20px;
+    text-align: center;
+    margin-right: 5px;
+}
+
+.btn:active {
+    transform: translateY(4px);
+}
+
+.btn:hover {
+    animation: pulse 1s;
+    box-shadow: 0 0 0 2em rgba(0,0,0,0);
+}
+
+.Input-text {
+    display: block;
+    margin-top: 15px;
+    padding: 5px;
+    color: inherit;
+    width: 50%;
+    font-family: inherit;
+    font-size: 20px;
+    font-weight: inherit;
+    line-height: var(--inputLineHeight);
+    border: none;
+    border-radius: 0.4rem;
+    transition: box-shadow var(--transitionDuration);
+}
+
+.Input-text::placeholder {
+    color: #B0BEC5;
+}
+
+.Input-text:focus {
+    outline: none;
+}
+
+
+.Input-text:placeholder-shown + .Input-label {
+    visibility: hidden;
+    z-index: -1;
+}
+
+select {
+
+    /* styling */
+    background-color: white;
+    border: thin solid blue;
+    border-radius: 4px;
+    display: inline-block;
+    font: inherit;
+    line-height: 1.5em;
+    padding: 0.5em 3.5em 0.5em 1em;
+
+    /* reset */
+
+    margin: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 150px;
+}
+
+.select {
+    background-image:
+            linear-gradient(45deg, transparent 50%, gray 50%),
+            linear-gradient(135deg, gray 50%, transparent 50%),
+            linear-gradient(to right, #ccc, #ccc);
+    background-position:
+            calc(100% - 20px) calc(1em + 2px),
+            calc(100% - 15px) calc(1em + 2px),
+            calc(100% - 2.5em) 0.5em;
+    background-size:
+            5px 5px,
+            5px 5px,
+            1px 1.5em;
+    background-repeat: no-repeat;
+}
+
+.select:focus {
+    background-image:
+            linear-gradient(45deg, green 50%, transparent 50%),
+            linear-gradient(135deg, transparent 50%, green 50%),
+            linear-gradient(to right, #ccc, #ccc);
+    background-position:
+            calc(100% - 15px) 1em,
+            calc(100% - 20px) 1em,
+            calc(100% - 2.5em) 0.5em;
+    background-size:
+            5px 5px,
+            5px 5px,
+            1px 1.5em;
+    background-repeat: no-repeat;
+    border-color: green;
+    outline: 0;
 }

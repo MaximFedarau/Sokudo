@@ -38,15 +38,20 @@ youtubeDownloadButton.onclick = function(){
     if (usersFileStatus === false) {
     if (validYT(youtubeLinkInput.value)){
         console.log('Started')
+        let usersFormatYouTube = ".mp4"
+        if (usersYouTubePreferencesList[0] === "worst") usersFormatYouTube = ".3gp"
+        else if (usersYouTubePreferencesList[0].indexOf("webm") !== -1) usersFormatYouTube = ".webm"
+        else if (usersYouTubePreferencesList[0].indexOf("m4a") !== -1) usersFormatYouTube = ".m4a"
         const youtubedl = require('yt-dlp-exec')
         /*youtubedl.default(youtubeLinkInput.value,{
             rmCacheDir: true,
-            ver
+
 
         },{
             cwd: __dirname,
         })*/
             youtubedl(youtubeLinkInput.value,{
+                output: usersYouTubePreferencesList[1] ? undefined : makeid(20)+usersFormatYouTube,
                 format: usersYouTubePreferencesList[0]
             },
                 {
@@ -73,7 +78,7 @@ youtubeDownloadButton.onclick = function(){
 
 
 let usersPreferencesButton = document.getElementById("usersPreferencesButton")
-let usersYouTubePreferencesList = ['best']
+let usersYouTubePreferencesList = ['best',makeid(20)]
 usersPreferencesButton.onclick = function() {
     ipcDownload.send('secondStepChangingUsersYouTubePreferences')
     ipcDownload.on('thirdStepChangingUsersYouTubePreferences', (event,arg)=> {
@@ -82,9 +87,20 @@ usersPreferencesButton.onclick = function() {
     })
 }
 
+function makeid(length) {
+    var result           = '';
+    var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    var charactersLength = characters.length;
+    for ( var i = 0; i < length; i++ ) {
+        result += characters.charAt(Math.floor(Math.random() *
+            charactersLength));
+    }
+    return result;
+}
+
 let baseSettingsButton = document.getElementById("basePreferencesButton")
 baseSettingsButton.onclick = function() {
-    usersYouTubePreferencesList = ['best']
+    usersYouTubePreferencesList = ['best',makeid(20)]
     console.log(usersYouTubePreferencesList)
 }
 

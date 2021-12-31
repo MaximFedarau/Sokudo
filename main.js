@@ -180,6 +180,8 @@ function createYouTubePreferencesWindow() {
         },
     });
 
+    //youtubePreferencesWindow.webContents.openDevTools()
+
     youtubePreferencesWindow.loadFile('public/youtubePreferencesHTML.html')
 
     youtubePreferencesWindow.once("ready-to-show", () => {
@@ -208,7 +210,6 @@ ipcMain.on('firstStepChangingUsersYouTubePreferences', (event,arg)=> {
 ipcMain.on('secondStepChangingUsersYouTubePreferences', (event, arg) => {
     event.reply('thirdStepChangingUsersYouTubePreferences', usersYouTubePreferencesList)
 })
-
 
 
 
