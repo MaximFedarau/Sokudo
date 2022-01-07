@@ -51,7 +51,7 @@ youtubeDownloadButton.onclick = function(){
             cwd: __dirname,
         })*/
             youtubedl(youtubeLinkInput.value,{
-                output: usersYouTubePreferencesList[1] ? undefined : makeid(20)+usersFormatYouTube,
+                output: usersYouTubePreferencesList[1]+usersFormatYouTube, //проверка на undefined
                 format: usersYouTubePreferencesList[0]
             },
                 {

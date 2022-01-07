@@ -83,6 +83,13 @@ const template  = [
                 }
             },
             {
+                label: "URL Downloader",
+                accelerator: "Command+U",
+                click() {
+                    win.loadFile('public/urlDownloaderHTML.html')
+                }
+            },
+            {
                 label: 'Quit',
                 accelerator: 'Command+Q',
                 click() { app.quit(); }
@@ -200,7 +207,19 @@ ipcMain.on('closeYouTubePreferencesWindow', (event,arg) => {
 app.on('ready', () => {
     createWindow()
 });
-let usersYouTubePreferencesList = ['best']
+
+function makeid(length) {
+    var result           = '';
+    var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    var charactersLength = characters.length;
+    for ( var i = 0; i < length; i++ ) {
+        result += characters.charAt(Math.floor(Math.random() *
+            charactersLength));
+    }
+    return result;
+}
+
+let usersYouTubePreferencesList = ['best',makeid(20)]
 ipcMain.on('firstStepChangingUsersYouTubePreferences', (event,arg)=> {
     usersYouTubePreferencesList = arg
     console.log(usersYouTubePreferencesList)
@@ -208,8 +227,12 @@ ipcMain.on('firstStepChangingUsersYouTubePreferences', (event,arg)=> {
 })
 
 ipcMain.on('secondStepChangingUsersYouTubePreferences', (event, arg) => {
+    if (usersYouTubePreferencesList[1]==='') usersYouTubePreferencesList[1] = makeid(20)
     event.reply('thirdStepChangingUsersYouTubePreferences', usersYouTubePreferencesList)
 })
 
+
+
+//add URl Downloader
 
 
