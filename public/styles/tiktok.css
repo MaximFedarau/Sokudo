@@ -149,6 +149,19 @@ body{
     margin-left: 575px;
 }
 
+#usersTikTokPreferencesButton:active {
+    transform: translateY(4px);
+}
 
 
+#usersTikTokPreferencesButton:hover .fa-user {
+    font-size: 17px;
+}
 
+#baseTikTokPreferencesButton:hover .fa-star {
+    font-size: 17px;
+}
+
+#baseTikTokPreferencesButton:active {
+    transform: translateY(4px);
+}

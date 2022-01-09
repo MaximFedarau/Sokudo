@@ -69,17 +69,17 @@ const template  = [
         label: 'File',
         submenu: [
             {
-                label: 'Tik Tok Downloader',
-                accelerator: 'Command+T',
-                click() {
-                    win.loadFile('public/tiktok.html')
-                }
-            },
-            {
                 label: "YouTube Downloader",
                 accelerator: "Command+Y",
                 click() {
                     win.loadFile('public/index.html')
+                }
+            },
+            {
+                label: 'Tik Tok Downloader',
+                accelerator: 'Command+T',
+                click() {
+                    win.loadFile('public/tiktok.html')
                 }
             },
             {
@@ -231,8 +231,54 @@ ipcMain.on('secondStepChangingUsersYouTubePreferences', (event, arg) => {
     event.reply('thirdStepChangingUsersYouTubePreferences', usersYouTubePreferencesList)
 })
 
+let tiktokPreferencesWindow;
+function createTikTokPreferencesWindow() {
+    tiktokPreferencesWindow = new BrowserWindow({
+        width: 1000,
+        height: 700,
+        modal: true,
+        show: false,
+        parent: win,
+        resizable: false,
+        frame: false,// Make sure to add parent window here
 
+        // Make sure to add webPreferences with below configuration
+        webPreferences: {
+            nodeIntegration: true,
+            contextIsolation: false,
+            enableRemoteModule: true,
+        },
+    });
 
+    //tiktokPreferencesWindow.webContents.openDevTools()
+
+    tiktokPreferencesWindow.loadFile('public/tiktokPreferencesHTML.html')
+
+    tiktokPreferencesWindow.once("ready-to-show", () => {
+        tiktokPreferencesWindow.show();
+    });
+}
+
+ipcMain.on('createTikTokPreferencesWindow', (event,arg) => {
+    createTikTokPreferencesWindow()
+})
+
+ipcMain.on('closeTikTokPreferencesWindow', (event,arg) => {
+    tiktokPreferencesWindow.close()
+})
+
+let usersTikTokPreferencesList = [false,"mp4",makeid(20)]
+ipcMain.on('firstStepChangingUsersTikTokPreferences', (event,arg)=> {
+    usersTikTokPreferencesList = arg
+    console.log(usersTikTokPreferencesList)
+    event.returnValue = "Ok"
+})
+
+ipcMain.on('secondStepChangingUsersTikTokPreferences', (event, arg) => {
+    if (usersTikTokPreferencesList[2]==='') usersTikTokPreferencesList[2] = makeid(20)
+    while (usersTikTokPreferencesList[2].indexOf(' ') !== -1) usersTikTokPreferencesList[2] = usersTikTokPreferencesList[2].replace(" ","_")
+    event.reply('thirdStepChangingUsersTikTokPreferences', usersTikTokPreferencesList)
+})
 //add URl Downloader
 
 

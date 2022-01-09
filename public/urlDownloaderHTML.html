@@ -2,10 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Sokudo</title>
+    <title>URL Downloader</title>
     <link rel="stylesheet" href="styles/urlDownloaderCSS.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 </head>
 <body>
-<h1>URL Downloader</h1>
+<div class="Input" align="center">
+
+
+    <input type="text" id="urlLinkInput" class="Input-text" placeholder="Place a link">
+
+
+    <button class="btn" id="urlDownloadButton"><i class="fa fa-download"></i></button>
+</div>
+<button id="chooseDirURL" class="btn"><i class="fa fa-folder"></i></button>
+<button id="preferencesURL" class="btn"><i class="fa fa-cog"></i></button>
+<script src="scripts/urlDownload.js"></script>
 </body>
 </html>
