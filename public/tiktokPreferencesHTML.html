@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TikTok Preferences</title>
+    <link rel="stylesheet" href="styles/tiktokPreferencesCSS.css">
+</head>
+<body>
+<button id="closeTikTokPreferencesWindow">✕</button>
+<h3 style="color: rgb(77,181,171); font-family: Palatino; font-size: 23px; ">Watermark</h3>
+<label class="switch">
+    <input type="checkbox" id="tiktokWatermarkSwitch">
+    <span class="slider round"></span>
+</label>
+<h3 style="color: rgb(77,181,171); font-family: Palatino; font-size: 23px; ">Video Format</h3>
+<select class="select" id="selectVideoFormatTikTok">
+    <option value="mp4">mp4</option>
+    <option value="3gp">3gp</option>
+    <option value="ogg">ogg</option>
+    <option value="webm">webm</option>
+    <option value="mov">mov</option>
+    <option value="avi">avi</option>
+</select><br><br>
+<input type="text" placeholder="Place a filename" id="usersFilenameTikTok" class="Input-text">
+<br>
+<br>
+<br>
+<h1 style="color: rgb(77,181,171); font-family: Palatino; font-size: 53px; text-align: center;">Coming soon...</h1>
+<button id="acceptTikTokPreferencesButton">Accept</button>
+<script>
+    const ipcRenderer = require('electron').ipcRenderer
+
+    const closeTikTokPreferencesWindowButton = document.getElementById("closeTikTokPreferencesWindow")
+
+    closeTikTokPreferencesWindowButton.onclick = function() {
+        ipcRenderer.send('closeTikTokPreferencesWindow')
+    }
+</script>
+<script src="scripts/tiktokPreferencesBaseScript.js"></script>
+</body>
+</html>
