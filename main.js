@@ -90,6 +90,13 @@ const template  = [
                 }
             },
             {
+                label: 'Guide',
+                accelerator: "Command+G",
+                click() {
+                    createGuideWindow()
+                }
+            },
+            {
                 label: 'Quit',
                 accelerator: 'Command+Q',
                 click() { app.quit(); }
@@ -279,6 +286,37 @@ ipcMain.on('secondStepChangingUsersTikTokPreferences', (event, arg) => {
     while (usersTikTokPreferencesList[2].indexOf(' ') !== -1) usersTikTokPreferencesList[2] = usersTikTokPreferencesList[2].replace(" ","_")
     event.reply('thirdStepChangingUsersTikTokPreferences', usersTikTokPreferencesList)
 })
+
+let guideWindow;
+function createGuideWindow() {
+    guideWindow = new BrowserWindow({
+        width: 720,
+        height: 720,//720
+        resizable: true,
+        minWidth: 500,
+        minHeight: 500,
+        maxWidth: 1280,
+        maxHeight: 1280,
+
+        webPreferences: {
+            enableRemoteModule: true,
+            nodeIntegration: true,
+            contextIsolation: false,//false
+        }
+    });
+
+    guideWindow.loadFile('public/guide.html');
+
+    //win.webContents.openDevTools();
+
+    //win.setMenu(null);
+    guideWindow.setMenuBarVisibility(false)
+    guideWindow.on('closed', () => {
+        win = null;
+    });
+}
+
 //add URl Downloader
+//add separate info window
 
 
