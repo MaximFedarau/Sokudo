@@ -9,4 +9,6 @@ If you need to immediately download YouTube video follow this steps:
 3) Save all changes and run or build an app.
 Sorry again for the inconvenience. (((
 ***
+**Update: the bug was fixed.**
+***
 > ### Soon...
