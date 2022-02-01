@@ -7,7 +7,6 @@ If you need to immediately download YouTube video follow this steps:
 1) Follow path: ./public/scripts/download.js.
 2) In 45th line change this line: `const youtubedl = require('youtube-dl-exec')`.
 3) Save all changes and run or build an app.
-еще раз извините за неудобства
-***
 Sorry again for the inconvenience. (((
+***
 > ### Soon...
