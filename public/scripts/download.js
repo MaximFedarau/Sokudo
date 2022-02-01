@@ -52,7 +52,8 @@ youtubeDownloadButton.onclick = function(){
         })*/
             youtubedl(youtubeLinkInput.value,{
                 output: usersYouTubePreferencesList[1]+usersFormatYouTube, //проверка на undefined
-                format: usersYouTubePreferencesList[0]
+                format: usersYouTubePreferencesList[0],
+                noCheckCertificate: true
             },
                 {
                 cwd: usersFilePath
