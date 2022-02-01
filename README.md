@@ -2,7 +2,7 @@
 
 *** 
 Note:
-Now if you are trying to test our app there is a little issue with yt-dlp. Our team is fixing this problem. 
+Now if you are trying to test our app there is a little issue with yt-dlp on some devices. Our team is fixing this problem. 
 If you need to immediately download YouTube video follow this steps:
 1) Follow path: ./public/scripts/download.js.
 2) In 45th line change this line: `const youtubedl = require('youtube-dl-exec')`.
